@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <button id="btn">Click me</button>
+        <script>
+            const button = document.querySelector("#btn");
+            button.addEventListener("click", function () {
+                const na = [];
+                var sum = 0;
+                for (var i = 1;i<=100;i++){
+                    na[i-1]=i;
+                    sum+=i;
+                }
+                console.log(sum);
+            });
+        </script>
+    </body>
+</html>

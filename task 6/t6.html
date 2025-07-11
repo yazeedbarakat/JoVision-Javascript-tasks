@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        button {
+            color : white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+        }
+        </style>
+    <head>
+    </head>
+    <body style ="padding-top: 50px;text-align: center; background-color: cadetblue;">
+        <button id="b1" style="background-color: red;"> 1</button>
+        <button id="b2" style="background-color: orange;"> 2</button>
+        <button id="b3" style="background-color: gray;"> 3</button>
+        <button id="b4" style="background-color: green;"> 4</button>
+        <button id="b5" style="background-color: blue;"> 5</button>
+        <script>
+            // button 1
+            const cb1=document.querySelector("#b1");
+            cb1.addEventListener("click",function(){
+                const na =[];
+                j=1;
+                for (let i = 1; i <= 100; i++) {
+                    if(i%3!=0){na[i - j] = i}
+                else {
+                    j++;
+                }}
+               console.log(na);
+            });
+            // button 2
+            const cb2=document.querySelector("#b2");
+            cb2.addEventListener("click",function(){
+                const na =[];
+                for (let i = 1; i <= 150; i++) {na[i-1]=i;}
+                let s = na.slice(100,150);
+                console.log(s);
+            });
+            // button 3
+            const cb3=document.querySelector("#b3");
+            cb3.addEventListener("click",function(){
+                const na =[];
+                for (let i = 1; i <= 100; i++) {na[i-1]=i+3;}
+                console.log(na);
+            });
+            // button 4
+            const cb4=document.querySelector("#b4");
+            cb4.addEventListener("click",function(){
+                const na =[];
+                for (let i = 1; i <= 100; i++) {na[i-1]=i;}
+                let s = na.slice(20,40);
+                console.log(s);
+            });
+            // button 5
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    let j = Math.floor(Math.random() * (i + 1));
+                        [array[i], array[j]] = [array[j], array[i]];
+                    }return array;}
+            const cb5=document.querySelector("#b5");
+            cb5.addEventListener("click",function(){
+                const na =[];
+                for (let i = 1; i <= 100; i++) {na[i-1]=i;}
+                console.log(shuffleArray(na));
+                na.sort(function(a,b){return b-a});
+                console.log(na);
+
+            });
+        </script>
+        
+    </body>
+</html>

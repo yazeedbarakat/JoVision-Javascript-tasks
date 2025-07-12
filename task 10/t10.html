@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body style="background-color: teal; text-align: center;padding-top: 300px;">
+        <button id="gi" style="padding: 20px; border-radius: 10px;background-color: red;color: white;" >get ip</button>
+        
+        <script>
+           const cb = document.querySelector("#gi");
+           cb.addEventListener("click", function(){
+            fetch("https://api.ipify.org/?format=json")
+            .then(response => response.json())
+            .then(data => document.getElementById("gi").innerHTML =  data.ip)
+            .catch(error => console.error("error:",error))
+            
+        })
+        </script>
+    </body>
+</html>
